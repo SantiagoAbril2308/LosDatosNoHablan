@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VozAula</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script>window.Chart || document.write('<script src="/vendor/chart.umd.min.js"><\/script>')</script>
+</head>
+<body>
+  <header>
+    <div class="marca">
+      <h1>VozAula</h1>
+      <p>Lo que dicen los estudiantes, convertido en decisiones</p>
+    </div>
+    <div class="controles">
+      <label class="archivo">
+        <input type="file" id="archivo" accept=".csv,.xlsx,.xls">
+        <span id="nombreArchivo">Elegir CSV / XLSX</span>
+      </label>
+      <button id="btnAnalizar" class="primario" disabled>Analizar</button>
+      <button id="btnPrueba">Cargar dataset de prueba</button>
+      <label class="interruptor" title="Usa solo la caché: no llama a ninguna API (funciona sin internet)">
+        <input type="checkbox" id="demo">
+        <span class="deslizador"></span>
+        <span>Modo demo</span>
+      </label>
+    </div>
+  </header>
+
+  <section id="progreso" class="oculto">
+    <div class="barraProgreso"><span id="barra"></span></div>
+    <p id="msgProgreso"></p>
+  </section>
+  <div id="error" class="error oculto"></div>
+
+  <nav id="tabs">
+    <button data-tab="docente" class="activa">Docente</button>
+    <button data-tab="revision">Revisión humana <span id="badgeDudosos" class="badge"></span></button>
+    <button data-tab="ranking">Ranking</button>
+    <button data-tab="antes">Antes vs Ahora</button>
+    <button data-tab="como">Cómo funciona</button>
+  </nav>
+
+  <main>
+    <section id="tab-docente" class="tab">
+      <div id="vacio" class="vacio">
+        <h2>Sube un archivo de comentarios o carga el dataset de prueba</h2>
+        <p>Columnas obligatorias: <code>docente</code>, <code>comentario</code>. Opcionales: <code>materia</code>, <code>semestre</code>.</p>
+      </div>
+      <div id="vistaDocente" class="oculto">
+        <div class="filaSelector">
+          <label for="selDocente">Docente</label>
+          <select id="selDocente"></select>
+          <a id="btnReporte" class="boton" href="#">Descargar reporte</a>
+        </div>
+        <div class="grid2">
+          <div class="tarjeta puntaje">
+            <div class="etiqueta">Puntaje general</div>
+            <div id="scoreGeneral" class="numeroGrande">—</div>
+            <div id="detalleGeneral" class="detalle"></div>
+          </div>
+          <div class="tarjeta">
+            <div class="etiqueta">Puntaje por aspecto <small>(n = comentarios · confianza del puntaje)</small></div>
+            <div class="lienzo"><canvas id="graficoAspectos"></canvas></div>
+          </div>
+        </div>
+        <div class="grid2 iguales">
+          <div class="tarjeta">
+            <h3>Fortalezas a reconocer</h3>
+            <ul id="recsReconocer" class="recs"></ul>
+          </div>
+          <div class="tarjeta">
+            <h3>A mejorar</h3>
+            <ul id="recsMejorar" class="recs"></ul>
+          </div>
+        </div>
+        <div class="tarjeta">
+          <h3>Comentarios mixtos: cómo se dividieron</h3>
+          <div id="mixtos"></div>
+        </div>
+        <div class="tarjeta">
+          <h3>Todos los comentarios clasificados</h3>
+          <div id="todos"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-revision" class="tab oculto">
+      <div class="tarjeta">
+        <h3>Comentarios apartados para revisión humana</h3>
+        <p class="ayuda">No se fuerzan: no cuentan en el puntaje hasta que una persona los revise. Regla (en código): confianza &lt; 0.70, o "ambiguo", o "sarcasmo" con confianza &lt; 0.85, o "fuera de tema". Un "mixto" con confianza alta <b>no</b> es dudoso.</p>
+        <div id="listaDudosos"></div>
+      </div>
+    </section>
+
+    <section id="tab-ranking" class="tab oculto">
+      <div class="tarjeta">
+        <h3>Ranking comparativo</h3>
+        <div id="tablaRanking"></div>
+      </div>
+      <div class="tarjeta explicacion">
+        <h3>¿Por qué es justo?</h3>
+        <p>Usamos un <b>promedio bayesiano</b>: cada puntaje se calcula como si el docente tuviera además <b id="mParam">m</b> comentarios "promedio" de la institución.</p>
+        <p class="formula">puntaje = (n · media_docente + m · media_institucional) / (n + m)</p>
+        <p>Con muchos comentarios manda la opinión real de sus estudiantes. Con pocos, el puntaje se acerca al promedio, así que <b>un docente con 4 comentarios muy buenos no queda de primero por suerte</b> frente a uno con 40 comentarios consistentemente buenos.</p>
+        <p>Además, los comentarios dudosos no cuentan, y cada aspecto pesa según su impacto en el aprendizaje.</p>
+      </div>
+    </section>
+
+    <section id="tab-antes" class="tab oculto">
+      <div class="tarjeta">
+        <h3>Antes (conteo de palabras) vs Ahora (VozAula)</h3>
+        <p class="ayuda">Comparamos la etiqueta correcta (hecha por personas) contra el método anterior y contra VozAula.</p>
+        <button id="btnComparar" class="primario">Ejecutar comparación</button>
+        <div id="resumenComparacion" class="kpis"></div>
+        <div id="tablaComparacion"></div>
+      </div>
+    </section>
+
+    <section id="tab-como" class="tab oculto">
+      <div class="tarjeta">
+        <h3>Pipeline</h3>
+        <div class="pipeline">
+          <div class="paso"><b>1. Carga</b><span>CSV / XLSX<br>valida columnas, quita vacíos y duplicados</span></div>
+          <div class="flecha">→</div>
+          <div class="paso"><b>2. Clasificación IA</b><span>aspecto + sentimiento por fragmento<br>lotes de 10 · caché sha256</span></div>
+          <div class="flecha">→</div>
+          <div class="paso"><b>3. Filtro de dudosos</b><span>sarcasmo, ambiguo, fuera de tema<br>→ revisión humana</span></div>
+          <div class="flecha">→</div>
+          <div class="paso"><b>4. Puntaje bayesiano</b><span>por aspecto, ponderado<br>comparable entre docentes</span></div>
+          <div class="flecha">→</div>
+          <div class="paso"><b>5. Recomendaciones</b><span>2 aspectos más bajos + el más alto<br>citando a los estudiantes</span></div>
+        </div>
+        <p class="ayuda">IA: Groq (principal) con respaldo automático en Gemini. Si no hay internet, el modo demo usa solo la caché.</p>
+      </div>
+      <div class="tarjeta">
+        <h3>Pesos de los aspectos</h3>
+        <table class="tabla">
+          <thead><tr><th>Aspecto</th><th>Peso</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>Metodología</td><td>30%</td><td>Cómo enseña (claridad, ejemplos, ritmo) es lo que más determina si el estudiante aprende.</td></tr>
+            <tr><td>Dominio del tema</td><td>25%</td><td>Sin dominio no hay buena explicación posible: es la base de lo que se enseña.</td></tr>
+            <tr><td>Trato al estudiante</td><td>20%</td><td>El respeto y la disposición condicionan que el estudiante pregunte y participe.</td></tr>
+            <tr><td>Evaluación</td><td>15%</td><td>Evaluaciones justas miden y refuerzan el aprendizaje, pero no lo producen.</td></tr>
+            <tr><td>Puntualidad</td><td>10%</td><td>Afecta el tiempo efectivo de clase, pero sola impacta menos el aprendizaje.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
