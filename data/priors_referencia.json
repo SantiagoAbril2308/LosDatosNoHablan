@@ -1,0 +1,19 @@
+{
+  "descripcion": "Media institucional de referencia por aspecto (0-1), sobre data/comentarios_prueba.csv sin dudosos, con suavizado de 2 menciones neutrales.",
+  "fuente": "data/comentarios_prueba.csv",
+  "comentarios": 96,
+  "menciones": {
+    "metodologia": 32,
+    "dominio_tema": 13,
+    "trato_estudiante": 21,
+    "evaluacion": 24,
+    "puntualidad": 15
+  },
+  "priors": {
+    "metodologia": 0.6176470588235294,
+    "dominio_tema": 0.9333333333333333,
+    "trato_estudiante": 0.5217391304347826,
+    "evaluacion": 0.34615384615384615,
+    "puntualidad": 0.7058823529411765
+  }
+}

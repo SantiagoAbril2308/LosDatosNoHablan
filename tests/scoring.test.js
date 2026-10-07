@@ -27,15 +27,18 @@ test('2 perfectos no superan 40 casi perfectos con un prior global representativ
 });
 
 test('Los dudosos se excluyen incluso del prior y se cuentan por docente', () => {
+  // 3 docentes y 10 menciones válidas: el prior sale del archivo y los dudosos no lo tocan.
   const { docentes, parametros } = calcularScores([
     c('A', [a('metodologia', 'positivo')]),
     c('A', [a('metodologia', 'negativo')], true),
     c('B', todos('negativo'), true),
+    ...Array.from({ length: 9 }, () => c('C', [a('metodologia', 'positivo')])),
   ]);
   assert.equal(docentes.A.totalComentarios, 2);
   assert.equal(docentes.A.dudosos, 1);
   assert.equal(docentes.A.aspectos.metodologia.n, 1);
   assert.equal(docentes.A.aspectos.metodologia.mediaCruda, 1);
+  assert.equal(parametros.fuentePorAspecto.metodologia, 'archivo');
   assert.equal(parametros.priors.metodologia, 1);
   assert.equal(docentes.B.dudosos, 1);
   assert.equal(docentes.B.aspectoMasBajo, null);
@@ -60,11 +63,35 @@ test('Un aspecto sin menciones propias recibe el prior global', () => {
     c('A', [a('metodologia', 'negativo')]),
     c('B', [a('evaluacion', 'positivo')]),
     c('B', [a('evaluacion', 'neutral')]),
-  ]);
+    ...Array.from({ length: 4 }, () => c('C', [a('evaluacion', 'positivo'), a('evaluacion', 'neutral')])),
+  ], 5, { priorsReferencia: null });
+  // evaluacion: 10 menciones en 3 docentes → prior del archivo (0.75).
   assert.deepEqual(r.docentes.A.aspectos.evaluacion,
     { score: 75, n: 0, mediaCruda: null, confianza: 'baja' });
+  // puntualidad: sin menciones y sin referencia → 0.5.
   assert.equal(r.docentes.A.aspectos.puntualidad.score, 50);
   assert.equal(r.parametros.priors.puntualidad, 0.5);
+  assert.equal(r.parametros.fuentePrior, 'referencia');
+});
+
+test('Un docente solo con 1 comentario positivo NO saca 100 en ese aspecto', () => {
+  // Con la referencia real (data/priors_referencia.json) y sin ella, en todos los aspectos.
+  for (const priorsReferencia of [undefined, null]) {
+    for (const aspecto of Object.keys(PESOS)) {
+      const r = calcularScores([c('Prof. Demo', [a(aspecto, 'positivo')])], 5,
+        priorsReferencia === undefined ? undefined : { priorsReferencia });
+      assert.equal(r.parametros.fuentePrior, 'referencia');
+      assert.ok(r.docentes['Prof. Demo'].aspectos[aspecto].score < 100,
+        `${aspecto} = ${r.docentes['Prof. Demo'].aspectos[aspecto].score}`);
+    }
+  }
+});
+
+test('Con 3+ docentes y 10+ menciones el prior sale del archivo', () => {
+  const datos = ['A', 'B', 'C'].flatMap(d => Array.from({ length: 4 }, () => c(d, todos('positivo'))));
+  const r = calcularScores(datos);
+  assert.equal(r.parametros.fuentePrior, 'archivo');
+  assert.ok(Object.values(r.parametros.priors).every(x => x === 1));
 });
 
 test('Los PESOS suman 1 y coinciden con el contrato', () => {
@@ -74,10 +101,11 @@ test('Los PESOS suman 1 y coinciden con el contrato', () => {
 });
 
 test('Un arreglo vacío devuelve resultado vacío con priors neutrales', () => {
-  const r = calcularScores([]);
+  const r = calcularScores([], 5, { priorsReferencia: null });
   assert.deepEqual(r.docentes, {});
   assert.deepEqual(r.ranking, []);
   assert.equal(r.parametros.m, 5);
+  assert.equal(r.parametros.fuentePrior, 'referencia');
   assert.ok(Object.values(r.parametros.priors).every(x => x === 0.5));
 });
 
@@ -106,7 +134,8 @@ test('m configurable afecta el suavizado y rechaza valores inválidos', () => {
 });
 
 test('Ignora etiquetas desconocidas sin contaminar los puntajes', () => {
-  const r = calcularScores([c('__proto__', [a('otro', 'positivo'), a('metodologia', 'desconocido')])]);
+  const r = calcularScores([c('__proto__', [a('otro', 'positivo'), a('metodologia', 'desconocido')])], 5,
+    { priorsReferencia: null });
   assert.equal(r.docentes['__proto__'].scoreGeneral, 50);
   assert.equal(r.docentes['__proto__'].aspectos.metodologia.n, 0);
 });

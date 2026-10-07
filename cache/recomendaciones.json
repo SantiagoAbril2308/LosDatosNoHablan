@@ -271,5 +271,189 @@
    ],
    "fuente": "ia"
   }
+ ],
+ "153e564a68f3c59741e9be9b3c8367318b2fd4fb179b8ca3ca856406e25b0840": [
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Limitar a dos talleres por unidad y publicar una rúbrica detallada antes de cada parcial; entregar la retroalimentación escrita de cada parcial dentro de los 5 días hábiles posteriores.",
+   "citas": [
+    "deja demasiados talleres",
+    "las notas del parcial fueron injustas y nunca dio retroalimentación"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "puntualidad",
+   "tipo": "mejorar",
+   "texto": "Diseñar un cronograma con tiempos límite y usar un temporizador para cerrar la clase a la hora pactada, reservando los últimos 5 min para preguntas y registrar la hora de finalización en el acta.",
+   "citas": [
+    "se alarga más de la hora",
+    "Siempre llega a tiempo y cumple con el horario"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Los estudiantes valoran su dominio profundo y los ejemplos de la vida real; comparta esta práctica en una sesión de intercambio docente y prepare una breve presentación con casos aplicados.",
+   "citas": [
+    "Domina el tema de estructuras de datos, se nota la experiencia",
+    "La profe sabe muchísimo y explica con ejemplos de la vida real"
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "fb10a6a7c7e805b63541bc54655e685700e4805f3fcf8d631fa6d5215f250edc": [
+  {
+   "aspecto": "puntualidad",
+   "tipo": "reconocer",
+   "texto": "Mantener la puntualidad que los estudiantes valoran y compartir la práctica en la próxima reunión de departamento mediante una breve presentación de 5 min.",
+   "citas": [
+    "Siempre llega puntual"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "trato_estudiante",
+   "tipo": "reconocer",
+   "texto": "Continuar con la paciencia que destaca el alumnado y ofrecer un taller de atención personalizada para colegas en el próximo ciclo de capacitación docente.",
+   "citas": [
+    "Excelente profesor, explica muy bien y es muy paciente"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "metodologia",
+   "tipo": "reconocer",
+   "texto": "Seguir empleando explicaciones claras y distribuir una guía de buenas prácticas metodológicas entre los docentes antes del fin de semestre.",
+   "citas": [
+    "Excelente profesor, explica muy bien y es muy paciente"
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "39e32e13f5a671ce146fff4192f7d86e42af89db68e182e9cf58caa30eed4956": [
+  {
+   "aspecto": "trato_estudiante",
+   "tipo": "mejorar",
+   "texto": "Implementar una política de retroalimentación respetuosa: iniciar cada clase con 5 min de \"espacio de dudas\" donde la docente responde preguntas sin elevar la voz y registra cualquier incidente; medir el clima con una encuesta anónima semanal que pregunte \"¿Me sentí respetado al preguntar?\" y buscar al menos 80 % de respuestas positivas en 4 semanas.",
+   "citas": [
+    "Es grosera cuando uno pregunta algo que ya explicó",
+    "Regaña a los estudiantes frente a todo el salón, eso no está bien",
+    "Humilla a quien se equivoca, da miedo participar"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "evaluacion",
+   "tipo": "reconocer",
+   "texto": "Los estudiantes valoran que \"Los talleres tienen rúbrica y los criterios son claros\"; compartir la rúbrica y los criterios en la reunión de docentes del próximo mes y subirlos a la carpeta compartida del departamento para que colegas los adopten.",
+   "citas": [
+    "Los talleres tienen rúbrica y los criterios son claros"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "El dominio del tema es destacado con \"sabe muchísimo\"; organizar una breve masterclass o video tutorial sobre los contenidos clave y difundirlo entre los colegas como modelo de excelencia académica.",
+   "citas": [
+    "Excelente con el tema, sabe muchísimo"
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "c2b1f5b652a788d95e5e92ff4913394c0e0a3b96fb4aa4526fa9b438fe9bc84d": [
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Publicar un rúbrica detallada de los parciales al menos una semana antes y solicitar retroalimentación de al menos 5 estudiantes después de cada parcial para ajustar criterios de calificación.",
+   "citas": [
+    "los parciales son injustos"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "puntualidad",
+   "tipo": "mejorar",
+   "texto": "Iniciar la clase a la hora exacta y aplicar un quiz de 5 minutos que cuente para participación, registrando la asistencia para evaluar cumplimiento del 90% de puntualidad en el semestre.",
+   "citas": [
+    "llega tarde"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Compartir con colegas la estrategia de explicar conceptos con ejemplos actuales, organizando una sesión de intercambio de buenas prácticas en la próxima reunión de docentes.",
+   "citas": [
+    "Domina el tema y las clases son entretenidas"
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "f9198563aa78d129a2f6cd17ba31d7c379ac0f4d7f1e49016eedaee7cc1ad785": [
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Alinear los exámenes con los contenidos explicados creando una tabla de correspondencia y entregar retroalimentación escrita con rúbrica y respuestas correctas dentro de 5 días hábiles; medir el cumplimiento verificando que al menos el 90% de los ítems coincidan con la tabla y que la retroalimentación sea enviada a tiempo.",
+   "citas": [
+    "Los exámenes no tienen nada que ver con lo que explica",
+    "No hay retroalimentación de los parciales, uno nunca sabe en qué se equivocó"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "puntualidad",
+   "tipo": "mejorar",
+   "texto": "Iniciar la clase a la hora pactada y, si ocurre retraso, subir la grabación a la plataforma y programar una sesión de reposición dentro de 48 horas; controlar el cumplimiento registrando la hora de inicio real y la entrega de la reposición.",
+   "citas": [
+    "Llega tarde todas las clases, y eso que la clase es a las 2 pm",
+    "Cancela clases sin avisar y luego no las repone"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Compartir con los colegas la estrategia de actualización constante que usa, por ejemplo organizando una charla mensual donde exponga casos reales de redes que ha manejado, y documentar esas sesiones en un repositorio interno.",
+   "citas": [
+    "El profe conoce mucho de redes, tiene mucha experiencia",
+    "Domina la materia, se nota que trabaja en el área"
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "99c33240c5402500459fd835b2c262d442bec70feeae2f5f1c4f5b4b06dbf899": [
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Publicar el cronograma de entregas con al menos 48 h de antelación y limitar la duración de los parciales a 90 min; medir cumplimiento verificando que ninguna entrega se programe a menos de 48 h y que el tiempo de examen no supere el límite.",
+   "citas": [
+    "nos dejó el proyecto final un viernes a las 11 de la noche para el lunes",
+    "los parciales son larguísimos y no alcanza el tiempo"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "puntualidad",
+   "tipo": "mejorar",
+   "texto": "Iniciar la clase a la hora exacta y aplicar un quiz de 5 min que cuente para participación; registrar la hora de inicio en el acta y asegurar que el 90 % de las sesiones arranquen a tiempo, además responder correos académicos dentro de 48 h usando una respuesta automática que indique el plazo.",
+   "citas": [
+    "casi siempre arranca la clase 20 minutos tarde",
+    "contesta los correos… al mes y medio"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Los estudiantes destacan que \"Sabe muchísimo de estadística\"; organizar una breve sesión mensual de \"tips rápidos\" y compartir este formato con los colegas en la reunión de departamentos para que lo adopten.",
+   "citas": [
+    "Sabe muchísimo de estadística"
+   ],
+   "fuente": "ia"
+  }
  ]
 }

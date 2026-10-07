@@ -105,6 +105,7 @@ function renderTodo() {
   renderRevision();
   renderRanking();
   $('#mParam').textContent = datos.scores.parametros?.m ?? 'm';
+  $('#notaPrior').classList.toggle('oculto', datos.scores.parametros?.fuentePrior !== 'referencia');
 }
 $('#selDocente').addEventListener('change', (e) => renderDocente(e.target.value));
 

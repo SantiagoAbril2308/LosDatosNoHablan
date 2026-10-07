@@ -1771,5 +1771,761 @@
   "banderas": [],
   "razon": "Describe falta de respeto y burla hacia los estudiantes",
   "proveedor": "groq"
+ },
+ "67a71fd16c9dedd57fb5e791640fe60d9d68ea0744f8825b55198787420593d3": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "explica súper bien"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "metodologia claramente elogiada",
+  "proveedor": "groq"
+ },
+ "66f545aeb81c55d6626a19dba19d7847f41f7b351a8353d35affd46f7f32a84b": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "Muy dinámica"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "se destaca dinamismo y ejercicios prácticos como parte de la metodología",
+  "proveedor": "groq"
+ },
+ "6297422366104c752586dfdf0477a295fd308a13861de5891b61570fdeeffd61": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "positivo",
+    "evidencia": "muy amable"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "actitud amable y paciencia con dudas indica trato positivo",
+  "proveedor": "groq"
+ },
+ "8e806c96e8f753223842995f5abf8f3ec3af6e12f4b60dd4e68dffad2dc61091": {
+  "aspectos": [
+   {
+    "aspecto": "dominio_tema",
+    "sentimiento": "positivo",
+    "evidencia": "Domina el tema"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "se menciona dominio y experiencia en la materia",
+  "proveedor": "groq"
+ },
+ "1b9e734253b593b102a1d62ff46c2ca4f44ff8072ca3c97bef3e35382dae70c7": {
+  "aspectos": [
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "positivo",
+    "evidencia": "justos"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "parciales son difíciles pero justos y alineados con lo visto",
+  "proveedor": "groq"
+ },
+ "95bac9fa870eca9e23f6be45fd8525a15387659993312c48187a61105c5502a9": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "Explica bien"
+   },
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "negativo",
+    "evidencia": "deja demasiados talleres"
+   }
+  ],
+  "confianza": 0.9,
+  "banderas": [
+   "mixto"
+  ],
+  "razon": "metodología elogiada pero la carga de talleres se percibe negativa",
+  "proveedor": "groq"
+ },
+ "26470e2da1d4a3609b217b3a51e7bf3cee0d3cbdc9735b76af8558b80de70e8d": {
+  "aspectos": [
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "positivo",
+    "evidencia": "llega a tiempo"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "cumple con horario y puntualidad",
+  "proveedor": "groq"
+ },
+ "2a02b7a8b54aa7c43906ed4da9529335809e8939448b1005a19edd23f97018b8": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "una chimba"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "clases calificadas como excelentes, implica buena metodología",
+  "proveedor": "groq"
+ },
+ "e2e0699945b5cf0e9724d67b6a16701258ca521e691aef6267f195cab36ad057": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "positivo",
+    "evidencia": "Muy buena profe"
+   },
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "negativo",
+    "evidencia": "se alarga más de la hora"
+   }
+  ],
+  "confianza": 0.9,
+  "banderas": [
+   "mixto"
+  ],
+  "razon": "elogio a la profesora pero se critica que la clase se extiende más del tiempo",
+  "proveedor": "groq"
+ },
+ "4e32aa0a786bc7b341dba4a13aec26459ed4c97b0dbe4d7f0e30fb28c558c539": {
+  "aspectos": [],
+  "confianza": 0.6,
+  "banderas": [
+   "ambiguo"
+  ],
+  "razon": "comentario positivo general sin mencionar aspecto concreto del desempeño docente",
+  "proveedor": "groq"
+ },
+ "f7769ef08ba295a80cab90680a4647601b9f2831d1def152ea4342fa4b0af01b": {
+  "aspectos": [
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "positivo",
+    "evidencia": "Califica rápido"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Comentario positivo sobre rapidez y claridad de la retroalimentación.",
+  "proveedor": "groq"
+ },
+ "7064fa7b5aecc0afb8944615bd334636b2e9c3a0408b7740c5f9c041dda3ed64": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "positivo",
+    "evidencia": "respetuosa con todos"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "Elogio claro al trato respetuoso y disponibilidad para preguntar.",
+  "proveedor": "groq"
+ },
+ "48b3f8392fb766ae5aa762acd11fd9d1ad1ac82a5f54ca5fb70fe4aa71dc6ba1": {
+  "aspectos": [],
+  "confianza": 0.55,
+  "banderas": [
+   "ambiguo"
+  ],
+  "razon": "Solo dice \"Bien\" sin referirse a ningún aspecto concreto del docente.",
+  "proveedor": "groq"
+ },
+ "8143e60727295e110e83e5131d0c7391cb53460f0eeb13bb3e58c7dacbd17b69": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "proyectos que pone, muy prácticos"
+   }
+  ],
+  "confianza": 0.88,
+  "banderas": [],
+  "razon": "Destaca la metodología basada en proyectos prácticos.",
+  "proveedor": "groq"
+ },
+ "0ffb914767b16176c43bc19dab8bd7a39fb426a758b98961eaf2a3b5f9a4d5b9": {
+  "aspectos": [
+   {
+    "aspecto": "dominio_tema",
+    "sentimiento": "positivo",
+    "evidencia": "sabe muchísimo"
+   },
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "explica con ejemplos de la vida real"
+   }
+  ],
+  "confianza": 0.94,
+  "banderas": [],
+  "razon": "Menciona tanto el amplio conocimiento como la forma clara de explicar con ejemplos.",
+  "proveedor": "groq"
+ },
+ "562c21914c687543d86be16668e85caaed1fe8b883cdd005f553db9a1c6f5217": {
+  "aspectos": [
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "positivo",
+    "evidencia": "Nunca falta a clase"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "Indica asistencia constante y avisos con anticipación.",
+  "proveedor": "groq"
+ },
+ "c1b7888199375048e2f3b590dbcc30013bda43d90a0ad5ed3e62367eccd07660": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "Explica bien"
+   },
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "positivo",
+    "evidencia": "es puntual"
+   },
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "negativo",
+    "evidencia": "notas del parcial fueron injustas"
+   }
+  ],
+  "confianza": 0.92,
+  "banderas": [
+   "mixto"
+  ],
+  "razon": "Combina elogios a metodología y puntualidad con crítica a la evaluación.",
+  "proveedor": "groq"
+ },
+ "1c9c0c146a37f8c3cf24c46a61e898c32dfa780fdcbc201b97ae0ab55ddb8a46": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "se hace entender"
+   },
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "positivo",
+    "evidencia": "bacana"
+   }
+  ],
+  "confianza": 0.89,
+  "banderas": [],
+  "razon": "Elogia la claridad al explicar y la actitud agradable del profesor.",
+  "proveedor": "groq"
+ },
+ "f161bda2234cbb37d62f293662d36e7f15ddcd4db9c62b16047cbd237864c4e5": {
+  "aspectos": [
+   {
+    "aspecto": "dominio_tema",
+    "sentimiento": "positivo",
+    "evidencia": "Sabe mucho del tema"
+   },
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "negativo",
+    "evidencia": "no sabe explicar"
+   }
+  ],
+  "confianza": 0.91,
+  "banderas": [
+   "mixto"
+  ],
+  "razon": "Reconoce buen dominio del tema pero critica la forma de explicarlo.",
+  "proveedor": "groq"
+ },
+ "1e72809103b77c496fa9466031b966c23567b59942ac735a5399b7850ec427ef": {
+  "aspectos": [
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "negativo",
+    "evidencia": "Llega tarde"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Señala tardanza constante en la llegada a clase.",
+  "proveedor": "groq"
+ },
+ "f35c0da6d4305c620fa57de4dbff7f4537c90b571aac4b43201f05ed1aa97d1c": {
+  "aspectos": [
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "negativo",
+    "evidencia": "llegó solo media hora tarde"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [
+   "sarcasmo"
+  ],
+  "razon": "sarcasmo evidente sobre puntualidad",
+  "proveedor": "groq"
+ },
+ "316db8d341c6d80a236b91ec74f798a58c8c0f657cc814d4b9cdf30a8eeeda6e": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "negativo",
+    "evidencia": "solo lee las diapositivas"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "queja directa a la metodología",
+  "proveedor": "groq"
+ },
+ "467979763a71ac827e86829aad479c15a82666f9fd0a65a8246b1f8d65ba7152": {
+  "aspectos": [
+   {
+    "aspecto": "dominio_tema",
+    "sentimiento": "positivo",
+    "evidencia": "conoce mucho de redes"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "elogio al dominio del tema",
+  "proveedor": "groq"
+ },
+ "4b7939a9ee3a0cf54f7e115bec18e9916415010aa32816f71cd60fb790dfd6f1": {
+  "aspectos": [
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "negativo",
+    "evidencia": "Cancela clases sin avisar"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "incumplimiento de horarios",
+  "proveedor": "groq"
+ },
+ "c924eea347d9508e17a612054e13ed55c8ea6f40102aa492602837f1fb24bbf6": {
+  "aspectos": [
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "negativo",
+    "evidencia": "exámenes no tienen nada que ver con lo que explica"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "evaluación incoherente",
+  "proveedor": "groq"
+ },
+ "4d809efa80dd86a95223b88e084bf3e810780a13bf753f5e0ae87b67f8e57403": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "positivo",
+    "evidencia": "Es buena gente"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "trato amable del docente",
+  "proveedor": "groq"
+ },
+ "42602081dc940a137f2eaa490454267bba384bbb4b78699a51ddb7f84f79e57a": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "negativo",
+    "evidencia": "no se le entiende nada"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "explicación demasiado rápida y poco clara",
+  "proveedor": "groq"
+ },
+ "96ad6e44f218dddf7799b9ddc2c1fee0653f5b0f36d1eb1bbea58feb802ca47a": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "negativo",
+    "evidencia": "la mejor metodología del mundo"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [
+   "sarcasmo"
+  ],
+  "razon": "elogio sarcástico que indica mala metodología",
+  "proveedor": "groq"
+ },
+ "b12fd6db6dea2b2d62b7f5c49b57633b2bcd8f935b4e0ae010a91b81703ade4f": {
+  "aspectos": [
+   {
+    "aspecto": "dominio_tema",
+    "sentimiento": "positivo",
+    "evidencia": "Domina la materia"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "reconoce alto dominio del tema",
+  "proveedor": "groq"
+ },
+ "cc6e508d677ed4f285192ec54405b9693a0914583cba0688b9f6eabb779a9ff3": {
+  "aspectos": [
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "negativo",
+    "evidencia": "No hay retroalimentación de los parciales"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "falta de retroalimentación en la evaluación",
+  "proveedor": "groq"
+ },
+ "e436e8814d30af9b07ccdcc2879991897697f8fe8bae91155d188b5e91f6dadb": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "negativo",
+    "evidencia": "uno tiene que aprender todo por YouTube"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Comentario indica que el profe no enseña bien, obligando a buscar info en YouTube.",
+  "proveedor": "groq"
+ },
+ "550e6167b4caabcfb304685dc7f09be074c51ff76e4a7dfa5373b66c3e601f04": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "positivo",
+    "evidencia": "Es respetuoso"
+   },
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "negativo",
+    "evidencia": "sus clases son confusas y desorganizadas"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [
+   "mixto"
+  ],
+  "razon": "Se menciona respeto (positivo) y clases confusas (negativo).",
+  "proveedor": "groq"
+ },
+ "c2d653b3be62b4e875834657d15cd9a3cba5d0d6c9dc79f52c59f62595f0afdf": {
+  "aspectos": [],
+  "confianza": 0.6,
+  "banderas": [
+   "ambiguo"
+  ],
+  "razon": "\"Normalito\" es demasiado vago para asignar un aspecto concreto.",
+  "proveedor": "groq"
+ },
+ "7dc1e19a7cb6a360cdf7a09e5644527e1db9d22000e255164e4f3d16ca4d7e29": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "Muy organizada, sus clases tienen un orden claro"
+   }
+  ],
+  "confianza": 0.94,
+  "banderas": [],
+  "razon": "Elogio claro a la organización y claridad de la clase.",
+  "proveedor": "groq"
+ },
+ "c8b38d079fd28a4b346cfad7a9800bd86bd278e94d9d56a7b12974c7b756a8c9": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "negativo",
+    "evidencia": "Es grosera cuando uno pregunta algo que ya explicó"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Se critica la actitud grosera del profe al responder preguntas.",
+  "proveedor": "groq"
+ },
+ "29ad05974a05f1d9c7b56a529950d717db329298c4e0d84f6fc8ec72dfc462d5": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "Explica con mucha claridad, se le entiende todo"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "Comentario elogia la claridad de la explicación.",
+  "proveedor": "groq"
+ },
+ "05b082279dd7b052d4b0d72a7f79d122ef2aaa2a52a9831c76436418c9c11801": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "negativo",
+    "evidencia": "Regaña a los estudiantes frente a todo el salón"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Se denuncia el regaño público como trato negativo.",
+  "proveedor": "groq"
+ },
+ "d791d33933b4b975b918fe5ef44c27654df9afbac2635da7c5ecf525c02e55b4": {
+  "aspectos": [
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "positivo",
+    "evidencia": "Los talleres tienen rúbrica y los criterios son claros"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "Se valora la claridad de rúbricas y criterios en los talleres.",
+  "proveedor": "groq"
+ },
+ "81a016b00e72959af207267edf8ea77dae9131b097d3544dd169ca627b67175b": {
+  "aspectos": [
+   {
+    "aspecto": "dominio_tema",
+    "sentimiento": "positivo",
+    "evidencia": "sabe muchísimo"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Comentario destaca gran conocimiento del tema.",
+  "proveedor": "groq"
+ },
+ "5486425d0fc8c1932fa5a3a30af32fdb594d4d10bb309da50428a253e5073295": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "negativo",
+    "evidencia": "solo nos gritó tres veces hoy"
+   }
+  ],
+  "confianza": 0.94,
+  "banderas": [
+   "sarcasmo"
+  ],
+  "razon": "\"Qué amable\" es sarcasmo que contrasta con los gritos, indicando trato negativo.",
+  "proveedor": "groq"
+ },
+ "d4648a722747a35a73fda84bbd151ae1f4b4bc73d75e05a5de964e34153dca0b": {
+  "aspectos": [
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "positivo",
+    "evidencia": "Siempre es puntual"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Comentario claro sobre puntualidad",
+  "proveedor": "groq"
+ },
+ "0f17f8af769db7c891d7d0cbc162e988f61ec89613096730915c1f5418cf4d59": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "negativo",
+    "evidencia": "Humilla a quien se equivoca"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "Se menciona humillación y miedo al participar",
+  "proveedor": "groq"
+ },
+ "b9f4bc0d08a072ce897f9cd459ae65ebb7e6c514414cad9b4de13c46b119806f": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "clases son interesantes y muy bien preparadas"
+   }
+  ],
+  "confianza": 0.94,
+  "banderas": [],
+  "razon": "Elogio a la forma y preparación de la clase",
+  "proveedor": "groq"
+ },
+ "58907d9f9a40c5d3187d9b273869054e986e29e32df0d36585a57ec541f32b37": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "negativo",
+    "evidencia": "muy arrogante, no acepta que la corrijan"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Actitud arrogante y falta de apertura",
+  "proveedor": "groq"
+ },
+ "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df": {
+  "aspectos": [],
+  "confianza": 0.55,
+  "banderas": [
+   "ambiguo"
+  ],
+  "razon": "Comentario demasiado corto y sin referencia a desempeño docente",
+  "proveedor": "groq"
+ },
+ "60a8a6b8a6526af6364d765e98089f240600d755df0d8d26b5100aee24c897f1": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "explica muy bien"
+   },
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "positivo",
+    "evidencia": "muy paciente"
+   }
+  ],
+  "confianza": 0.97,
+  "banderas": [],
+  "razon": "Elogios a la explicación y a la paciencia",
+  "proveedor": "groq"
+ },
+ "f91c2e9eeb1e0d02a411f728d26f00137e90138c3e7817560c5a798485ce7d29": {
+  "aspectos": [
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "positivo",
+    "evidencia": "Siempre llega puntual"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Afirmación directa de puntualidad",
+  "proveedor": "groq"
+ },
+ "536a569b96ea62113f9565d9b8e23f36c3c39aa7463e1fda8fe65f9f71aa3646": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "negativo",
+    "evidencia": "nadie entiende nada en su clase"
+   }
+  ],
+  "confianza": 0.93,
+  "banderas": [
+   "sarcasmo"
+  ],
+  "razon": "Uso de sarcasmo: 'todo un genio' seguido de que nadie entiende",
+  "proveedor": "groq"
+ },
+ "b7dcde834638282b9de67a8573ced5734da19cd9bcea73065791d46911bbefed": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "Explica bien"
+   },
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "negativo",
+    "evidencia": "llega tarde"
+   },
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "positivo",
+    "evidencia": "es amable"
+   },
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "negativo",
+    "evidencia": "parciales son injustos"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [
+   "mixto"
+  ],
+  "razon": "Comentario contiene opiniones positivas y negativas sobre varios aspectos",
+  "proveedor": "groq"
+ },
+ "7fec3ce1cd533a101dac005c91103ec5fe89150cedf807884045bfbb66e59377": {
+  "aspectos": [],
+  "confianza": 0.5,
+  "banderas": [
+   "ambiguo"
+  ],
+  "razon": "Frase vaga sin referencia clara a desempeño docente",
+  "proveedor": "groq"
+ },
+ "5fcdaeaa12155e50c485118a83eca5c812cc376c2a9432edc6dcef0341fee575": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "negativo",
+    "evidencia": "Le falta paciencia"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Se menciona falta de paciencia, que es un juicio negativo sobre el trato al estudiante.",
+  "proveedor": "groq"
+ },
+ "6c5afa2dfd36930572af3628804c11f1e44bccc4c866cea31a9f8fd09c68bc34": {
+  "aspectos": [
+   {
+    "aspecto": "dominio_tema",
+    "sentimiento": "positivo",
+    "evidencia": "Domina el tema"
+   },
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "clases son entretenidas"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [],
+  "razon": "Se elogia el dominio del tema y la forma entretenida de las clases, ambos positivos.",
+  "proveedor": "groq"
+ },
+ "0b2192790cd99d5c8032a402ba7588937da9de10b7cb88b4c361f8afc52683f3": {
+  "aspectos": [
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "negativo",
+    "evidencia": "\"excelente\" sentido de la puntualidad"
+   }
+  ],
+  "confianza": 0.9,
+  "banderas": [
+   "sarcasmo"
+  ],
+  "razon": "El uso de comillas y tono irónico indica sarcasmo, señalando puntualidad negativa.",
+  "proveedor": "groq"
  }
 }

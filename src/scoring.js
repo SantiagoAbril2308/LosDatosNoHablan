@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+
 /** Pesos por impacto: enseñar con claridad, rigor, respeto, evaluación y tiempo útil. */
 export const PESOS = Object.freeze({
   metodologia: 0.30, // Las actividades y explicaciones permiten construir aprendizaje.
@@ -10,6 +12,19 @@ const VALORES = { positivo: 1, neutral: 0.5, negativo: 0 };
 const ASPECTOS = Object.keys(PESOS);
 const redondear = valor => Math.round((valor + Number.EPSILON) * 10) / 10;
 const tiene = (objeto, clave) => Object.hasOwn(objeto, clave);
+const MIN_DOCENTES = 3;
+const MIN_MENCIONES = 10;
+
+/** Priors institucionales de referencia (data/priors_referencia.json); null si no existe. */
+function leerPriorsReferencia() {
+  try {
+    const { priors } = JSON.parse(readFileSync(new URL('../data/priors_referencia.json', import.meta.url), 'utf8'));
+    return priors && typeof priors === 'object' ? priors : null;
+  } catch {
+    return null;
+  }
+}
+export const PRIORS_REFERENCIA = leerPriorsReferencia();
 
 /**
  * Calcula puntajes comparables mediante suavizado bayesiano por aspecto.
@@ -25,10 +40,14 @@ const tiene = (objeto, clave) => Object.hasOwn(objeto, clave);
  * @param {Array<{id?: string, docente: string, comentario?: string,
  * aspectos: Array<{aspecto: string, sentimiento: string, evidencia?: string}>,
  * confianza?: number, banderas?: string[], dudoso?: boolean}>} comentarios
+ * Si el archivo tiene menos de 3 docentes, o un aspecto tiene menos de 10
+ * menciones válidas, ese prior sale de la referencia institucional (o 0.5 si
+ * no hay referencia): así un solo docente no se compara contra sí mismo.
  * @param {number} [m=5] Fuerza del prior, finita y estrictamente positiva.
+ * @param {{priorsReferencia?: Object|null}} [opciones] Para pruebas: priors de referencia a usar.
  * @returns {{docentes: Object, ranking: string[], parametros: Object}}
  */
-export function calcularScores(comentarios, m = 5) {
+export function calcularScores(comentarios, m = 5, { priorsReferencia = PRIORS_REFERENCIA } = {}) {
   if (!Array.isArray(comentarios)) throw new TypeError('comentarios debe ser un arreglo');
   if (!Number.isFinite(m) || m <= 0) throw new RangeError('m debe ser un número finito mayor que cero');
   const acumulados = new Map();
@@ -54,9 +73,18 @@ export function calcularScores(comentarios, m = 5) {
       globales[mencion.aspecto].n++;
     }
   }
-  const priors = Object.fromEntries(ASPECTOS.map(a => [a,
-    globales[a].n ? globales[a].suma / globales[a].n : 0.5,
-  ]));
+  const pocosDocentes = acumulados.size < MIN_DOCENTES;
+  const fuentePorAspecto = {};
+  const priors = Object.fromEntries(ASPECTOS.map(a => {
+    if (!pocosDocentes && globales[a].n >= MIN_MENCIONES) {
+      fuentePorAspecto[a] = 'archivo';
+      return [a, globales[a].suma / globales[a].n];
+    }
+    fuentePorAspecto[a] = 'referencia';
+    const ref = Number(priorsReferencia?.[a]);
+    return [a, Number.isFinite(ref) ? ref : 0.5];
+  }));
+  const fuentePrior = Object.values(fuentePorAspecto).includes('referencia') ? 'referencia' : 'archivo';
   const entradas = [];
   for (const [nombre, docente] of acumulados) {
     let general = 0;
@@ -81,5 +109,5 @@ export function calcularScores(comentarios, m = 5) {
   const docentes = Object.fromEntries(entradas);
   const ranking = entradas.map(([nombre]) => nombre).sort((a, b) =>
     docentes[b].scoreGeneral - docentes[a].scoreGeneral || a.localeCompare(b, 'es'));
-  return { docentes, ranking, parametros: { m, pesos: { ...PESOS }, priors } };
+  return { docentes, ranking, parametros: { m, pesos: { ...PESOS }, priors, fuentePrior, fuentePorAspecto } };
 }
