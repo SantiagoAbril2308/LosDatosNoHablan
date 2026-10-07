@@ -100,7 +100,8 @@ function renderTodo() {
   $('#vacio').classList.add('oculto');
   $('#vistaDocente').classList.remove('oculto');
   const sel = $('#selDocente');
-  sel.innerHTML = datos.scores.ranking.map((d, i) => `<option value="${esc(d)}">${i + 1}. ${esc(d)}</option>`).join('');
+  $('#buscarDocente').value = '';
+  llenarSelector('');
   renderDocente(sel.value);
   renderRevision();
   renderRanking();
@@ -108,6 +109,43 @@ function renderTodo() {
   $('#notaPrior').classList.toggle('oculto', datos.scores.parametros?.fuentePrior !== 'referencia');
 }
 $('#selDocente').addEventListener('change', (e) => renderDocente(e.target.value));
+
+// ---------- Buscar docente ----------
+const normalizar = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+
+/** Llena el selector con los docentes que coinciden con el filtro (sin mayúsculas ni tildes). */
+function llenarSelector(filtro) {
+  const sel = $('#selDocente');
+  const actual = sel.value;
+  const f = normalizar(filtro);
+  const opciones = datos.scores.ranking.map((d, i) => ({ d, i })).filter(({ d }) => !f || normalizar(d).includes(f));
+  const html = opciones.map(({ d, i }) => `<option value="${esc(d)}">${i + 1}. ${esc(d)}</option>`).join('');
+  if (!f) {
+    sel.innerHTML = html;
+    if (datos.scores.ranking.includes(actual)) sel.value = actual;
+    return opciones;
+  }
+  // Con filtro: si el docente mostrado no está entre las coincidencias, no se cambia en silencio.
+  const visible = opciones.some(({ d }) => d === actual);
+  const marcador = !opciones.length
+    ? '<option value="" disabled selected>Sin coincidencias</option>'
+    : visible || opciones.length === 1 ? '' : `<option value="" disabled selected>${opciones.length} coincidencias: elige una</option>`;
+  sel.innerHTML = marcador + html;
+  if (visible) sel.value = actual;
+  return opciones;
+}
+
+$('#buscarDocente').addEventListener('input', (e) => {
+  if (!datos) return;
+  const antes = $('#selDocente').value;
+  const opciones = llenarSelector(e.target.value);
+  if (opciones.length === 1 && opciones[0].d !== antes) {
+    $('#selDocente').value = opciones[0].d;
+    renderDocente(opciones[0].d);
+  } else if (!e.target.value.trim() && $('#selDocente').value !== antes) {
+    renderDocente($('#selDocente').value);
+  }
+});
 
 function renderDocente(nombre) {
   const info = datos.scores.docentes[nombre];
@@ -186,6 +224,8 @@ function renderRanking() {
     ${claves.map((a) => `<th>${NOMBRES[a]}</th>`).join('')}<th>Fortaleza</th><th>A mejorar</th></tr></thead><tbody>${filas}</tbody></table>`;
   document.querySelectorAll('#tablaRanking tr.clic').forEach((tr) =>
     tr.addEventListener('click', () => {
+      $('#buscarDocente').value = '';
+      llenarSelector('');
       $('#selDocente').value = tr.dataset.docente;
       renderDocente(tr.dataset.docente);
       irA('docente');
