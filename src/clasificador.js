@@ -5,7 +5,7 @@ import path from 'node:path';
 import { ASPECTOS, SENTIMIENTOS, BANDERAS } from './aspectos.js';
 
 const CACHE_DIR = path.resolve('cache');
-const TAM_LOTE = 10;
+const TAM_LOTE = 20; // el prompt de sistema se paga una vez por lote
 const ESPERA_429_MS = 20_000;
 const MAX_REINTENTOS_429 = 2;
 
@@ -37,14 +37,34 @@ const cacheClasif = crearCache('clasificaciones.json');
 
 // ---------- Proveedores de IA (Groq principal, Gemini respaldo) ----------
 
-function proveedores() {
+// Modelos de Groq en orden de preferencia. En Groq el límite de tokens por minuto es POR MODELO,
+// así que ante un 429 se pasa de inmediato al siguiente. Los que la key no tenga se omiten.
+const MODELOS_GROQ = [
+  process.env.MODEL || 'llama-3.3-70b-versatile',
+  'meta-llama/llama-4-scout-17b-16e-instruct',
+  'openai/gpt-oss-120b',
+  'qwen/qwen3.8-27b',
+  'openai/gpt-oss-20b',
+].filter((m, i, arr) => arr.indexOf(m) === i);
+
+const URL_GROQ = 'https://api.groq.com/openai/v1';
+let disponiblesGroq = null; // Promise<Set<string>|null>, se consulta una vez por proceso
+
+function modelosGroqDisponibles() {
+  disponiblesGroq ??= fetch(`${URL_GROQ}/models`, { headers: { Authorization: `Bearer ${process.env.GROQ_API_KEY}` }, signal: AbortSignal.timeout(8_000) })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((j) => (j?.data ? new Set(j.data.map((m) => m.id)) : null))
+    .catch(() => null); // sin lista: se prueban todos y los 404 pasan al siguiente
+  return disponiblesGroq;
+}
+
+async function proveedores() {
   const lista = [];
-  if (process.env.GROQ_API_KEY)
-    lista.push({
-      nombre: 'groq',
-      modelo: process.env.MODEL || 'openai/gpt-oss-120b',
-      cliente: new OpenAI({ baseURL: 'https://api.groq.com/openai/v1', apiKey: process.env.GROQ_API_KEY, maxRetries: 0, timeout: 60_000 }),
-    });
+  if (process.env.GROQ_API_KEY) {
+    const cliente = new OpenAI({ baseURL: URL_GROQ, apiKey: process.env.GROQ_API_KEY, maxRetries: 0, timeout: 60_000 });
+    const disponibles = await modelosGroqDisponibles();
+    for (const modelo of MODELOS_GROQ) if (!disponibles || disponibles.has(modelo)) lista.push({ nombre: 'groq', modelo, cliente });
+  }
   if (process.env.GEMINI_API_KEY)
     lista.push({
       nombre: 'gemini',
@@ -54,20 +74,22 @@ function proveedores() {
   return lista;
 }
 
-export const hayApi = () => proveedores().length > 0;
+export const hayApi = () => Boolean(process.env.GROQ_API_KEY || process.env.GEMINI_API_KEY);
 
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
+const esLimite = (e) => e?.status === 429 || e?.status === 503; // 503 = Gemini saturado
 
 /**
- * Llama al modelo pidiendo JSON. Groq primero; si falla o da 429, Gemini.
- * Si todos dan 429, espera 20 s y reintenta (máx. 2 veces). `validar` lanza si la respuesta no sirve.
+ * Llama al modelo pidiendo JSON. Recorre los modelos de Groq y luego Gemini; ante 429 o cualquier
+ * fallo pasa de inmediato al siguiente. Solo si TODOS dieron 429/503 espera 20 s y reintenta (máx. 2).
+ * `validar` lanza si la respuesta no sirve. Devuelve { datos, proveedor, modelo }.
  */
 export async function llamarModeloJSON(system, user, validar = (x) => x, onEstado = () => {}) {
-  const provs = proveedores();
+  const provs = await proveedores();
   if (!provs.length) throw new Error('No hay API keys configuradas (GROQ_API_KEY / GEMINI_API_KEY).');
   let ultimoError;
   for (let intento = 0; intento <= MAX_REINTENTOS_429; intento++) {
-    let hubo429 = false;
+    let todosLimite = true;
     for (const p of provs) {
       try {
         const r = await p.cliente.chat.completions.create({
@@ -81,14 +103,14 @@ export async function llamarModeloJSON(system, user, validar = (x) => x, onEstad
         });
         const texto = r.choices?.[0]?.message?.content ?? '';
         const json = JSON.parse(texto.replace(/^```(?:json)?\s*|\s*```$/g, ''));
-        return { datos: validar(json), proveedor: p.nombre };
+        return { datos: validar(json), proveedor: p.nombre, modelo: p.modelo };
       } catch (e) {
         ultimoError = e;
-        if (e?.status === 429 || e?.status === 503) hubo429 = true; // 503 = Gemini saturado: también se espera
-        console.warn(`[IA] ${p.nombre} falló: ${e?.status ?? ''} ${String(e?.message).slice(0, 160)}`);
+        if (!esLimite(e)) todosLimite = false;
+        console.warn(`[IA] ${p.nombre}/${p.modelo} falló: ${e?.status ?? ''} ${String(e?.message).slice(0, 160)}`);
       }
     }
-    if (!hubo429 || intento === MAX_REINTENTOS_429) break;
+    if (!todosLimite || intento === MAX_REINTENTOS_429) break;
     onEstado(`Límite de la API alcanzado (429). Esperando 20 s antes de reintentar (${intento + 1}/${MAX_REINTENTOS_429})…`);
     await dormir(ESPERA_429_MS);
   }
@@ -225,11 +247,13 @@ export async function clasificarComentarios(comentarios, { demo = false, onProgr
     const userMsg = 'Clasifica estos comentarios:\n' + JSON.stringify(lote.map((idx, i) => ({ i, comentario: comentarios[idx].comentario })), null, 0);
     let porI = null;
     let proveedor = '';
+    let modelo = '';
     for (let intento = 0; intento < 2 && !porI; intento++) {
       try {
         const r = await llamarModeloJSON(PROMPT_SISTEMA, userMsg, validarLote(lote.length), (mensaje) => onProgreso({ hechos, total, mensaje }));
         porI = r.datos;
         proveedor = r.proveedor;
+        modelo = r.modelo;
       } catch (e) {
         console.warn(`[clasificador] lote ${k / TAM_LOTE + 1} intento ${intento + 1} falló: ${e.message}`);
       }
@@ -239,7 +263,7 @@ export async function clasificarComentarios(comentarios, { demo = false, onProgr
       const crudo = porI?.get(i);
       if (crudo) {
         const r = normalizarResultado(crudo);
-        cacheClasif.set(hashTexto(c.comentario), { ...r, proveedor });
+        cacheClasif.set(hashTexto(c.comentario), { ...r, proveedor, modelo });
         salida[idx] = armar(c, r, proveedor);
       } else {
         // No se cachea: se podrá reintentar en otra corrida.
@@ -247,7 +271,7 @@ export async function clasificarComentarios(comentarios, { demo = false, onProgr
       }
     });
     hechos += lote.length;
-    onProgreso({ hechos, total, mensaje: `Clasificados ${hechos}/${total} (${proveedor || 'sin respuesta'}).` });
+    onProgreso({ hechos, total, mensaje: `Clasificados ${hechos}/${total} (${modelo || 'sin respuesta'}).` });
   }
   return salida;
 }

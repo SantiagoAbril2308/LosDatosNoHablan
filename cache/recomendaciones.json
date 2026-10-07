@@ -580,5 +580,52 @@
    ],
    "fuente": "ia"
   }
+ ],
+ "f463cba959141bbd949b759fabc47ea364cd079a8c37ab8b781381ce0a8c3328": [
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Establecer la entrega del proyecto final al menos 48 horas antes de la fecha límite y comunicarlo en el sílabo; medir si en el próximo ciclo alguna entrega queda con menos de 48 h de antelación.",
+   "citas": [
+    "nos dejó el proyecto final un viernes a las 11 de la noche para el lunes"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Rediseñar los parciales para que se ajusten al tiempo disponible en clase (máximo 60 min) y validar con una prueba piloto; registrar la duración real y encuestar a los estudiantes después del siguiente parcial.",
+   "citas": [
+    "los parciales son larguísimos y no alcanza el tiempo"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "trato_estudiante",
+   "tipo": "mejorar",
+   "texto": "Comprometerse a responder correos en un plazo máximo de 48 h, usando una respuesta automática que indique el tiempo de respuesta; monitorear el promedio de respuesta semanalmente.",
+   "citas": [
+    "contesta los correos… al mes y medio, cuando ya pasó el parcial"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "trato_estudiante",
+   "tipo": "mejorar",
+   "texto": "Participar en un taller de comunicación inclusiva y aplicar una política de respeto verbal, solicitando retroalimentación anónima al final de cada clase; comparar los resultados con la encuesta siguiente.",
+   "citas": [
+    "Es grosero, se burla de los que no entienden y nos trata de vagos"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Compartir su profundo dominio de estadística mediante una breve presentación en la reunión de docentes y crear un video tutorial de un concepto avanzado para que colegas lo usen; medir la adopción a través de visualizaciones y comentarios de colegas.",
+   "citas": [
+    "Sabe muchísimo de estadística, eso no se discute"
+   ],
+   "fuente": "ia"
+  }
  ]
 }
