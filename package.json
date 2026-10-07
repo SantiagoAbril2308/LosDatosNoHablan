@@ -1,0 +1,22 @@
+{
+  "name": "vozaula",
+  "version": "1.0.0",
+  "description": "VozAula: análisis de comentarios de estudiantes sobre docentes por aspecto y sentimiento (reto S-1 \"Los datos no hablan solos\")",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "csv-parse": "^7.0.3",
+    "dotenv": "^18.0.6",
+    "express": "^5.2.1",
+    "multer": "^2.4.0",
+    "openai": "^7.30.0",
+    "xlsx": "^0.18.5"
+  }
+}
