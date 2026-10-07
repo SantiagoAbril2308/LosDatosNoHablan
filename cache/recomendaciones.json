@@ -1,0 +1,244 @@
+{
+ "e9d6154625a1d51907ee66ed2b63c21d4e74e9c118255ee75ff8fdec633e7485": [
+  {
+   "aspecto": "puntualidad",
+   "tipo": "mejorar",
+   "texto": "Iniciar la clase a la hora pactada y, al comienzo, aplicar un quiz de 5 min que cuente 2 % de la nota de participación para incentivar la puntualidad.",
+   "citas": [
+    "explica bien pero llega tarde siempre",
+    "uy sí, qué puntualidad, solo 40 min tarde"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Conservar la justicia de los parciales y acompañarlos con una rúbrica detallada publicada antes del examen; subir calificaciones y retroalimentación a la plataforma dentro de 5 días hábiles.",
+   "citas": [
+    "Los parciales son justos y evalúa lo que vimos"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Los estudiantes valoran que \"Sabe un montón del tema\"; compartir esta práctica en la próxima reunión de docentes mediante una breve presentación de estrategias de dominio temático.",
+   "citas": [
+    "Sabe un montón del tema"
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "e31748256389c398262034f41029721b6eeafb301702762378b46fb99f6a8fe2": [
+  {
+   "aspecto": "trato_estudiante",
+   "tipo": "mejorar",
+   "texto": "Dedicar los últimos 5 min de cada clase a responder preguntas individuales y registrar cuántos estudiantes reciben retroalimentación, para asegurar que el \"responde todo\" se traduzca en atención personalizada.",
+   "citas": [
+    "responde todo"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "metodologia",
+   "tipo": "mejorar",
+   "texto": "Incluir al menos una actividad de aprendizaje activo (p.ej., think‑pair‑share) en cada sesión y contabilizar la participación mediante una hoja de asistencia, reforzando la claridad que los estudiantes describen como \"todo clarísimo\".",
+   "citas": [
+    "todo clarísimo"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Compartir en la próxima reunión docente una breve demostración de 10 min sobre cómo estructurar explicaciones que hacen que los estudiantes perciban \"La mejor profe\" y \"Domina el tema\".",
+   "citas": [
+    "La mejor profe",
+    "Domina el tema"
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "79c5142e7712d65414de6fb524cb5e4314bab43d20d4d735faf163f2d5549058": [
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Crear una matriz de contenidos cubiertos y publicar el alcance del examen al menos 7 días antes; además, fijar la fecha de entrega del parcial y enviarla por correo una semana previa, verificando que el 100 % de los parciales se publiquen en la fecha establecida.",
+   "citas": [
+    "Evalúa cosas que nunca vimos",
+    "tan organizado que el parcial llegó 2 semanas tarde"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "puntualidad",
+   "tipo": "mejorar",
+   "texto": "Mantener el inicio de clase a la hora en punto y comenzar con un quiz de 5 min que cuente para participación, registrando la asistencia y la nota del quiz para asegurar que al menos el 95 % de los estudiantes lleguen a tiempo.",
+   "citas": [
+    "nunca falta y llega puntual, eso sí"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Los estudiantes valoran que \"Sabe mucho\"; compartir esta fortaleza organizando una breve sesión de 15 min en la próxima reunión de docentes para presentar sus estrategias de dominio del tema.",
+   "citas": [
+    "Sabe mucho"
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "c05cc58e90588b21bac1c065d4a6f98d3d138d0319de80788106470ca870f6f3": [
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Diseñar y publicar una rúbrica detallada con criterios y pesos antes de cada entrega, y acompañar cada calificación con una breve justificación en el portal; revisar su claridad mediante una encuesta de satisfacción al finalizar la siguiente tarea.",
+   "citas": [
+    "rúbrica quedó confusa",
+    "califica sin justificar"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "puntualidad",
+   "tipo": "mejorar",
+   "texto": "Establecer un cronograma que obligue a iniciar la clase a la hora exacta y a devolver los parciales dentro de 5 días hábiles, registrando los horarios en un documento compartido para su seguimiento.",
+   "citas": [
+    "llega tarde",
+    "devolvió el parcial muy tarde"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Los estudiantes valoran que \"Domina algoritmos y justifica cada decisión\"; comparta esta práctica en una sesión de buenas prácticas de justificación algorítmica durante la próxima reunión de docentes.",
+   "citas": [
+    "Domina algoritmos y justifica cada decisión"
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "1530a645a7e3e242ed011081f1d4a17a21846cc4798d603d50dadb043a0d8764": [
+  {
+   "aspecto": "evaluacion",
+   "tipo": "reconocer",
+   "texto": "Publicar la rúbrica clara que utilizas como plantilla en el repositorio institucional y presentar su uso en la próxima sesión de desarrollo docente; medir su adopción contando cuántos colegas la descargan en el mes siguiente.",
+   "citas": [
+    "Entrega una rúbrica clara y comentarios útiles en cada trabajo."
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "trato_estudiante",
+   "tipo": "reconocer",
+   "texto": "Impartir una breve charla sobre escucha activa en la reunión de departamento, citando tu práctica de \"Escucha con paciencia y nunca ridiculiza a nadie\"; evaluar el impacto mediante una encuesta de clima docente al término del semestre.",
+   "citas": [
+    "Escucha con paciencia y nunca ridiculiza a nadie."
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Organizar un mini‑taller de probabilidades para colegas, usando tus explicaciones precisas como modelo; registrar la asistencia y solicitar feedback para validar la transferencia de conocimientos.",
+   "citas": [
+    "Domina probabilidades y responde con precisión."
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "fd54b851599fcc5064c0a701bdef3692bc2da346f5787c81e1095ce85e0a621f": [
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Publicar una rúbrica detallada antes del primer parcial y mantenerla sin cambios; explicar en clase los criterios y devolver retroalimentación escrita de cada entrega dentro de 3 días hábiles.",
+   "citas": [
+    "califica sin decir qué esperaba",
+    "cambió la rúbrica después de calificar"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "puntualidad",
+   "tipo": "mejorar",
+   "texto": "Iniciar la clase a la hora exacta y comenzar con un quiz de 5 min que cuente para participación, registrando la hora de inicio para comparar semanalmente.",
+   "citas": [
+    "solo 40 min tarde"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Los estudiantes destacan que \"Domina economía\"; compartir esta fortaleza en una sesión de intercambio docente y ofrecer una breve charla sobre cómo integrar ejemplos reales en la enseñanza.",
+   "citas": [
+    "Domina economía"
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "30041f0bfb3841ec34c7251dee4ef99d81f11b4cb1daa2d90f6973da8c5e3b05": [
+  {
+   "aspecto": "trato_estudiante",
+   "tipo": "mejorar",
+   "texto": "Implementar una política de respuesta a correos en 48 horas y usar siempre un saludo y tono respetuoso en las interacciones; medir el cumplimiento con un registro semanal de tiempos de respuesta y una encuesta de percepción al final del semestre.",
+   "citas": [
+    "nunca contesta un correo",
+    "nos humilla por preguntar"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Publicar una rúbrica detallada con criterios y pesos para cada parcial al menos una semana antes de la evaluación y solicitar a los estudiantes que confirmen su comprensión; verificar su uso mediante una tabla de criterios cumplidos y retroalimentación post‑parcial.",
+   "citas": [
+    "los parciales no tienen criterios"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Organizar una sesión de intercambio donde comparta ejemplos de resolución de integrales y explicación de teoremas, grabando videos tutoriales para que los colegas los usen; medir el impacto con número de visualizaciones y feedback de pares.",
+   "citas": [
+    "Resuelve cualquier integral",
+    "Domina los teoremas"
+   ],
+   "fuente": "ia"
+  }
+ ],
+ "17f8ccd8f228b72917af1e286dd79195599fc0cbed00023b344e1895bbc7f87d": [
+  {
+   "aspecto": "metodologia",
+   "tipo": "mejorar",
+   "texto": "Limitar la exposición de diapositivas a 15 minutos y, cada 30 minutos, incluir una actividad práctica de 5‑10 minutos (p.ej., caso corto o discusión en parejas) para romper la monotonía; registrar la duración y la participación en una hoja de control y comparar los resultados con la encuesta de satisfacción al final del semestre.",
+   "citas": [
+    "hasta el reloj se durmió",
+    "dos horas leyendo las mismas diapositivas",
+    "copiar sin parar del tablero"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Rediseñar las actividades para que requieran aplicación y reflexión, introduciendo una tarea semanal de resolución de problemas con retroalimentación en 48 h; medir el número de entregas originales versus copias mediante la revisión de rubricas.",
+   "citas": [
+    "las actividades son puro copiar"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Compartir la práctica de mantener un calendario de fechas clave actualizado y visible en cada sesión, presentándolo en la próxima reunión de docentes como ejemplo de dominio temático.",
+   "citas": [
+    "Se sabe todas las fechas"
+   ],
+   "fuente": "ia"
+  }
+ ]
+}

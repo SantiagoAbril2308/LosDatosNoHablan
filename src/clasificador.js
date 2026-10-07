@@ -84,7 +84,7 @@ export async function llamarModeloJSON(system, user, validar = (x) => x, onEstad
         return { datos: validar(json), proveedor: p.nombre };
       } catch (e) {
         ultimoError = e;
-        if (e?.status === 429) hubo429 = true;
+        if (e?.status === 429 || e?.status === 503) hubo429 = true; // 503 = Gemini saturado: también se espera
         console.warn(`[IA] ${p.nombre} falló: ${e?.status ?? ''} ${String(e?.message).slice(0, 160)}`);
       }
     }

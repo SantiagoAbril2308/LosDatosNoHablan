@@ -120,7 +120,7 @@ app.get('/api/reporte/:docente', (req, res) => {
   const info = ultimo.scores.docentes[d];
   if (!info) return res.status(404).send('Docente no encontrado.');
   const html = generarReporteHTML(d, info, ultimo.comentarios, ultimo.recomendaciones[d] || [], ultimo.scores.ranking.indexOf(d) + 1, ultimo.scores.ranking.length);
-  const archivo = `reporte_${d.normalize('NFD').replace(/[^\w]+/g, '_')}.html`;
+  const archivo = `reporte_${d.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\w]+/g, '_')}.html`;
   res.setHeader('Content-Disposition', `attachment; filename="${archivo}"`);
   res.type('html').send(html);
 });
