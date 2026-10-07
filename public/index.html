@@ -11,23 +11,33 @@
 <body>
   <header>
     <div class="marca">
-      <h1>VozAula</h1>
-      <p>Lo que dicen los estudiantes, convertido en decisiones</p>
+      <div class="marca-icono" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M7 12v8m6-13v18m6-21v24m6-17v10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div>
+      <div><h1>Voz<span>Aula</span></h1><p>Inteligencia para escuchar mejor</p></div>
     </div>
+    <div class="encabezado-meta"><span class="estado-punto"></span> Reto S-1 <span class="separador">/</span> Los datos no hablan solos</div>
+  </header>
+
+  <section class="introduccion" aria-labelledby="tituloPrincipal">
+    <div><p class="sobrelinea">LA VOZ DEL ESTUDIANTE, CON CONTEXTO</p><h2 id="tituloPrincipal">Escuchar es el primer paso.<br><span>Mejorar es el siguiente.</span></h2><p class="introduccion-texto">Descubre qué funciona en el aula, qué necesita atención<br class="solo-escritorio"> y qué dicen realmente los estudiantes.</p></div>
+    <div class="sello"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4 26 8v8c0 6-10 12-10 12S6 22 6 16V8l10-4Z" stroke="currentColor" stroke-width="1.7"/><path d="m11 16 3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Evidencia antes que suposiciones</strong><span>Análisis por aspecto · Revisión humana</span></div></div>
+  </section>
+
+  <section class="panel-carga" aria-label="Cargar comentarios">
+    <div class="carga-titulo"><span class="paso-numero">01</span><div><strong>Empieza con las voces de tu aula</strong><span>Importa un archivo o explora el ejemplo.</span></div></div>
     <div class="controles">
       <label class="archivo">
         <input type="file" id="archivo" accept=".csv,.xlsx,.xls">
-        <span id="nombreArchivo">Elegir CSV / XLSX</span>
+        <span id="nombreArchivo">↑ Elegir CSV / XLSX</span>
       </label>
       <button id="btnAnalizar" class="primario" disabled>Analizar</button>
-      <button id="btnPrueba">Cargar dataset de prueba</button>
+      <button id="btnPrueba">Explorar dataset de prueba</button>
       <label class="interruptor" title="Usa solo la caché: no llama a ninguna API (funciona sin internet)">
         <input type="checkbox" id="demo">
         <span class="deslizador"></span>
         <span>Modo demo</span>
       </label>
     </div>
-  </header>
+  </section>
 
   <section id="progreso" class="oculto">
     <div class="barraProgreso"><span id="barra"></span></div>
@@ -35,7 +45,7 @@
   </section>
   <div id="error" class="error oculto"></div>
 
-  <nav id="tabs">
+  <nav id="tabs" aria-label="Secciones del análisis">
     <button data-tab="docente" class="activa">Docente</button>
     <button data-tab="revision">Revisión humana <span id="badgeDudosos" class="badge"></span></button>
     <button data-tab="ranking">Ranking</button>
@@ -47,8 +57,12 @@
   <main>
     <section id="tab-docente" class="tab">
       <div id="vacio" class="vacio">
-        <h2>Sube un archivo de comentarios o carga el dataset de prueba</h2>
-        <p>Columnas obligatorias: <code>docente</code>, <code>comentario</code>. Opcionales: <code>materia</code>, <code>semestre</code>.</p>
+        <div class="vacio-icono" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect x="9" y="12" width="46" height="35" rx="9" stroke="currentColor" stroke-width="2"/><path d="m20 47-2 9 13-9M21 26h22M21 34h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="49" cy="15" r="9" fill="#d6ecdf"/><path d="m45 15 3 3 5-6" stroke="#246850" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <p class="sobrelinea">CADA COMENTARIO TIENE ALGO QUE CONTAR</p>
+        <h2>Tu próximo hallazgo empieza aquí</h2>
+        <p>Carga tus comentarios para descubrir fortalezas, oportunidades<br class="solo-escritorio"> y matices que un promedio no puede mostrar.</p>
+        <div class="vacio-pasos"><span><b>1</b> Importa tus datos</span><i>→</i><span><b>2</b> Analiza por aspecto</span><i>→</i><span><b>3</b> Decide con evidencia</span></div>
+        <p class="formato-nota">Tu archivo debe incluir <code>docente</code> y <code>comentario</code>.<br>También puedes agregar <code>materia</code> y <code>semestre</code>.</p>
       </div>
       <div id="vistaDocente" class="oculto">
         <div class="filaSelector">
@@ -79,7 +93,7 @@
           </div>
         </div>
         <div class="tarjeta sarcasmos">
-          <h3>🙃 Sarcasmos detectados <span id="nSarcasmos" class="badge"></span></h3>
+          <h3>Entre líneas: sarcasmos detectados <span id="nSarcasmos" class="badge"></span></h3>
           <p class="ayuda">Lo que dice literalmente vs. lo que realmente quiso decir el estudiante.</p>
           <div id="sarcasmos"></div>
         </div>
@@ -174,6 +188,8 @@
     </section>
 
   </main>
+
+  <footer class="pie"><span>VozAula <span class="pie-punto">·</span> Los datos no hablan solos.</span><span>La tecnología analiza. Las personas deciden.</span></footer>
 
   <script src="app.js"></script>
 </body>
