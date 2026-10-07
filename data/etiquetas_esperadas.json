@@ -1,0 +1,452 @@
+[
+  {
+    "comentario": "Qué belleza de profe, nunca contesta un correo.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "trato_estudiante",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Uy sí, qué amor, nos humilla por preguntar.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "trato_estudiante",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Un encanto, hoy nos volvió a llamar brutos.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "trato_estudiante",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Qué paciencia divina, me gritó por pedir ayuda.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "trato_estudiante",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Uff, qué clase tan emocionante, hasta el reloj se durmió.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Qué maravilla, dos horas leyendo las mismas diapositivas.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Divertidísima la clase, mejor que una pastilla para dormir.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Qué lujo de ejemplos, ninguno en todo el semestre.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Qué aventura tan dinámica, copiar sin parar del tablero.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Qué belleza de evaluación, preguntó todo lo que nunca explicó.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "evaluacion",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Súper claras las notas, nadie sabe de dónde salió el dos.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "evaluacion",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Qué justo, cambió la rúbrica después de calificar.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "evaluacion",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Excelente retroalimentación, un chulito y adivine qué falló.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "evaluacion",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Uy sí, qué puntualidad, solo 40 min tarde.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "puntualidad",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Una joya de organización, perdió los parciales otra vez.",
+    "sentimiento_general": "negativo",
+    "aspectos": [
+      {
+        "aspecto": "evaluacion",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "sarcasmo"
+    ]
+  },
+  {
+    "comentario": "Sabe un montón, pero trata a la gente como si fuera boba.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "dominio_tema",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "trato_estudiante",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Resuelve cualquier integral, pero se burla cuando uno pregunta.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "dominio_tema",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "trato_estudiante",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Explica bien pero llega tarde siempre.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "puntualidad",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Domina los teoremas, pero los parciales no tienen criterios.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "dominio_tema",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "evaluacion",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Los ejercicios ayudan, pero contesta de mala gana.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "trato_estudiante",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Siempre llega a la hora, pero esa clase es un ladrillo.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "puntualidad",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Entrega las notas a tiempo, pero solo dicta y dicta.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "evaluacion",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Es respetuosa, pero sus ejemplos no se entienden.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "trato_estudiante",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Se sabe todas las fechas, pero no propone actividades.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "dominio_tema",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Arranca puntual, pero leer diapositivas no ayuda a aprender.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "puntualidad",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Parce, explica con ejemplos buenísimos, pero llega tarde.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "puntualidad",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Sabe mucho de código, pero la rúbrica quedó confusa.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "dominio_tema",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "evaluacion",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Nos escucha con respeto, pero devolvió el parcial muy tarde.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "trato_estudiante",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "evaluacion",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Explica con casos reales, pero califica sin decir qué esperaba.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "metodologia",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "evaluacion",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  },
+  {
+    "comentario": "Es muy amable, pero el parcial no tenía que ver con lo visto.",
+    "sentimiento_general": "mixto",
+    "aspectos": [
+      {
+        "aspecto": "trato_estudiante",
+        "sentimiento": "positivo"
+      },
+      {
+        "aspecto": "evaluacion",
+        "sentimiento": "negativo"
+      }
+    ],
+    "banderas": [
+      "mixto"
+    ]
+  }
+]
