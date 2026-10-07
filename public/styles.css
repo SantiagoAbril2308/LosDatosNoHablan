@@ -134,3 +134,24 @@ code { background: var(--gris-claro); padding: 1px 6px; border-radius: 4px; }
 .sarcasmo .meta { font-size: 15px; color: var(--suave); margin-top: 6px; }
 
 .nota { margin: -8px 0 20px; padding: 12px 16px; background: var(--azul-claro); border-left: 5px solid var(--azul); border-radius: 0 8px 8px 0; font-weight: 600; }
+
+/* ---------- Pruébalo tú ---------- */
+.probar textarea { width: 100%; font: inherit; font-size: 20px; padding: 14px 16px; border: 2px solid var(--borde); border-radius: 10px; resize: vertical; margin-top: 8px; }
+.probar textarea:focus { outline: none; border-color: var(--azul); }
+.probar-acciones { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 14px 0 6px; }
+.probar-res { margin-top: 18px; }
+.probar-banderas { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.probar-aspectos { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.asp-tarjeta { border-radius: 12px; padding: 14px 16px; border: 2px solid var(--borde); background: var(--gris-claro); }
+.asp-tarjeta.positivo { background: var(--verde-claro); border-color: var(--verde); }
+.asp-tarjeta.negativo { background: var(--rojo-claro); border-color: var(--rojo); }
+.asp-tarjeta .asp-nombre { font-weight: 700; font-size: 20px; }
+.asp-tarjeta .asp-sent { font-weight: 700; text-transform: uppercase; font-size: 15px; letter-spacing: .5px; }
+.asp-tarjeta.positivo .asp-sent { color: var(--verde); }
+.asp-tarjeta.negativo .asp-sent { color: var(--rojo); }
+.asp-tarjeta .asp-evidencia { margin-top: 6px; font-style: italic; color: var(--suave); }
+.probar-confianza { margin-top: 18px; }
+.probar-confianza .barraProgreso { height: 16px; margin-top: 6px; }
+.probar-revision { margin-top: 16px; padding: 12px 16px; border-radius: 10px; background: var(--ambar-claro); color: var(--ambar); font-weight: 600; }
+.probar-ok { margin-top: 16px; padding: 12px 16px; border-radius: 10px; background: var(--verde-claro); color: var(--verde); font-weight: 600; }
+.probar-aviso { margin-top: 16px; padding: 14px 16px; border-radius: 10px; background: var(--azul-claro); color: var(--azul); font-weight: 600; }

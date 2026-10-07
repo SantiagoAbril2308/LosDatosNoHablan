@@ -41,6 +41,7 @@
     <button data-tab="ranking">Ranking</button>
     <button data-tab="antes">Antes vs Ahora</button>
     <button data-tab="como">Cómo funciona</button>
+    <button data-tab="probar">Pruébalo tú</button>
   </nav>
 
   <main>
@@ -155,6 +156,23 @@
         </table>
       </div>
     </section>
+
+    <section id="tab-probar" class="tab oculto">
+      <div class="tarjeta probar">
+        <h3>Pruébalo tú</h3>
+        <label for="txtProbar" class="ayuda">Escribe un comentario sobre un docente, como lo diría un estudiante.</label>
+        <textarea id="txtProbar" rows="4" maxlength="1000" placeholder="Ej: explica re bien pero los parciales no tienen nada que ver con lo que vimos"></textarea>
+        <div class="probar-acciones">
+          <button id="btnProbar" class="primario">Clasificar</button>
+          <span class="ayuda">Ejemplos:</span>
+          <button class="ejemplo" data-texto="Uy sí, qué profe tan organizado, el parcial lo cambió de fecha tres veces y nos avisó por WhatsApp a las 2 de la mañana.">Sarcástico</button>
+          <button class="ejemplo" data-texto="La profe domina muchísimo la materia y explica con calma, pero los talleres los califica sin decir qué estuvo mal.">Mixto</button>
+          <button class="ejemplo" data-texto="Es un profe muy particular, cada quien saca sus conclusiones.">Ambiguo</button>
+        </div>
+        <div id="resultadoProbar"></div>
+      </div>
+    </section>
+
   </main>
 
   <script src="app.js"></script>

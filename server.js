@@ -125,6 +125,22 @@ app.get('/api/reporte/:docente', (req, res) => {
   res.type('html').send(html);
 });
 
+// ---------- Pruébalo tú: clasificar UN comentario (con caché) ----------
+
+app.post('/api/probar', async (req, res) => {
+  const texto = String(req.body?.texto ?? '').replace(/\s+/g, ' ').trim();
+  if (!texto) return res.status(400).json({ error: 'Escribe un comentario para clasificarlo.' });
+  if (texto.length > 1000) return res.status(400).json({ error: 'El comentario es muy largo (máximo 1000 caracteres).' });
+  try {
+    const [r] = await clasificarComentarios([{ id: 1, docente: '—', comentario: texto }], { demo: esDemo(req.body?.demo) });
+    if (r.fuente === 'sin_clasificar') return res.json({ sinConexion: true, mensaje: 'Sin conexión a la IA: prueba con los ejemplos.' });
+    res.json(r);
+  } catch (e) {
+    console.warn(`[probar] ${e.message}`);
+    res.json({ sinConexion: true, mensaje: 'Sin conexión a la IA: prueba con los ejemplos.' });
+  }
+});
+
 // ---------- Antes vs Ahora ----------
 
 const SENT_VALIDOS = ['positivo', 'negativo', 'neutral', 'mixto'];

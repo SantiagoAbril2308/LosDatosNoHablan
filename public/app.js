@@ -243,3 +243,62 @@ fetch('/api/ultimo')
     }
   })
   .catch(() => {});
+
+// ---------- Pruébalo tú ----------
+const SENT_TEXTO = { positivo: 'Positivo', negativo: 'Negativo', neutral: 'Neutral' };
+const avisoSinConexion = '<div class="probar-aviso">Sin conexión a la IA: prueba con los ejemplos.</div>';
+
+function renderProbar(r) {
+  const banderas = r.banderas.map((b) => `<span class="chip bandera">${b === 'sarcasmo' ? 'Sarcasmo detectado' : BANDERAS[b] ?? b}</span>`).join('');
+  const aspectos =
+    r.aspectos
+      .map(
+        (a) => `<div class="asp-tarjeta ${a.sentimiento}">
+          <div class="asp-nombre">${NOMBRES[a.aspecto] ?? esc(a.aspecto)}</div>
+          <div class="asp-sent">${SENT_TEXTO[a.sentimiento] ?? esc(a.sentimiento)}</div>
+          ${a.evidencia ? `<div class="asp-evidencia">«${esc(a.evidencia)}»</div>` : ''}
+        </div>`
+      )
+      .join('') || '<p class="ayuda">No se detectó ningún aspecto del desempeño docente.</p>';
+  const pct = Math.round(r.confianza * 100);
+  const color = r.confianza >= 0.85 ? 'var(--verde)' : r.confianza >= 0.7 ? 'var(--azul)' : 'var(--ambar)';
+  $('#resultadoProbar').innerHTML = `<div class="probar-res">
+    ${banderas ? `<div class="probar-banderas">${banderas}</div>` : ''}
+    <div class="probar-aspectos">${aspectos}</div>
+    <div class="probar-confianza"><b>Confianza: ${pct}%</b>
+      <div class="barraProgreso"><span style="width:${pct}%;background:${color}"></span></div></div>
+    ${
+      r.dudoso
+        ? `<div class="probar-revision">Este iría a revisión humana. Motivo: ${esc(r.motivo)}</div>`
+        : '<div class="probar-ok">Clasificación confiable: este comentario entra al puntaje del docente.</div>'
+    }
+    ${r.razon ? `<p class="ayuda">${esc(r.razon)}</p>` : ''}
+  </div>`;
+}
+
+$('#btnProbar').addEventListener('click', async () => {
+  const texto = $('#txtProbar').value.trim();
+  if (!texto) {
+    $('#resultadoProbar').innerHTML = '<div class="probar-aviso">Escribe un comentario o elige un ejemplo.</div>';
+    return;
+  }
+  $('#btnProbar').disabled = true;
+  $('#resultadoProbar').innerHTML = '<p class="ayuda">Clasificando…</p>';
+  try {
+    const r = await fetch('/api/probar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ texto, demo: $('#demo').checked }) });
+    const j = await r.json();
+    if (j.sinConexion || !Array.isArray(j.aspectos)) {
+      $('#resultadoProbar').innerHTML = j.error ? `<div class="probar-aviso">${esc(j.error)}</div>` : avisoSinConexion;
+    } else renderProbar(j);
+  } catch {
+    $('#resultadoProbar').innerHTML = avisoSinConexion;
+  } finally {
+    $('#btnProbar').disabled = false;
+  }
+});
+document.querySelectorAll('.probar .ejemplo').forEach((b) =>
+  b.addEventListener('click', () => {
+    $('#txtProbar').value = b.dataset.texto;
+    $('#btnProbar').click();
+  })
+);

@@ -2527,5 +2527,108 @@
   ],
   "razon": "El uso de comillas y tono irónico indica sarcasmo, señalando puntualidad negativa.",
   "proveedor": "groq"
+ },
+ "a49447d5d3f92b0c6d1d7e3815b394dfa15d9bd6e98dc44b41a3d4bb1f61d2db": {
+  "aspectos": [
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "negativo",
+    "evidencia": "cambió de fecha tres veces"
+   },
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "negativo",
+    "evidencia": "avisó por WhatsApp a las 2 de la mañana"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [
+   "sarcasmo"
+  ],
+  "razon": "El comentario usa sarcasmo evidente (\"Uy sí, qué profe tan organizado\") y critica la gestión del parcial y la notificación tardía, ambos con sentimiento negativo.",
+  "proveedor": "groq"
+ },
+ "97e72b8e5955aca2a157b58064b80ba7ba04bed31b6a48b2d15bea3dbf804a66": {
+  "aspectos": [
+   {
+    "aspecto": "dominio_tema",
+    "sentimiento": "positivo",
+    "evidencia": "domina muchísimo la materia"
+   },
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "explica con calma"
+   },
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "negativo",
+    "evidencia": "califica sin decir qué estuvo mal"
+   }
+  ],
+  "confianza": 1,
+  "banderas": [
+   "mixto"
+  ],
+  "razon": "Se identifican tres aspectos: dominio_tema y metodologia positivos, evaluacion negativo, por lo que el comentario es mixto.",
+  "proveedor": "groq"
+ },
+ "4f18979484147d07978522ecc0c6edcaa561dd6157b930508e9ec2cb5c69532c": {
+  "aspectos": [],
+  "confianza": 0.95,
+  "banderas": [
+   "fuera_de_tema"
+  ],
+  "razon": "El comentario es genérico y no menciona metodología, dominio del tema, trato al estudiante, evaluación ni puntualidad.",
+  "proveedor": "groq"
+ },
+ "31164a7016449f51792500a99363b9e96cce29e8725a59a0ffdebb21e1a48d75": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "una chimba explicando"
+   },
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "negativo",
+    "evidencia": "se le olvida subir las notas"
+   },
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "negativo",
+    "evidencia": "nunca responde en el foro"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [
+   "mixto"
+  ],
+  "razon": "Metodología elogiada, pero se critica la entrega de notas (puntualidad) y la falta de respuesta en el foro (trato al estudiante), lo que genera una valoración mixta.",
+  "proveedor": "groq"
+ },
+ "c2adf7ca7f935a7073c0655d198b5c5c7cfaf5d6e01fb0c142a41274e58a4e94": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "negativo",
+    "evidencia": "aprende… a tener paciencia"
+   }
+  ],
+  "confianza": 0.9,
+  "banderas": [
+   "sarcasmo"
+  ],
+  "razon": "El comentario usa sarcasmo (jaja) y critica que el profe obliga a desarrollar paciencia, indicando un trato poco paciente.",
+  "proveedor": "groq"
+ },
+ "b384ccb409402170e3711f1f1b9f4ad72d8ba1d5c22fa1ea4ed4acf69b0cec62": {
+  "aspectos": [],
+  "confianza": 0.6,
+  "banderas": [
+   "ambiguo"
+  ],
+  "razon": "El comentario es vago y no menciona explícitamente metodología, dominio del tema, trato, evaluación o puntualidad; por lo tanto es ambiguo respecto al desempeño del docente.",
+  "proveedor": "groq"
  }
 }
