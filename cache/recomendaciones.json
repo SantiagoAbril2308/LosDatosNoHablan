@@ -240,5 +240,36 @@
    ],
    "fuente": "ia"
   }
+ ],
+ "1f2cb2b0e8a540af0f316d2f1c06994085ecf57de04b0b21356d0033a0c40f50": [
+  {
+   "aspecto": "puntualidad",
+   "tipo": "mejorar",
+   "texto": "Implementar un protocolo de respuesta a correos dentro de 48 h y comenzar la clase a la hora exacta, iniciando con una actividad breve de 5 min que cuente para participación; registrar la hora de inicio y el tiempo de respuesta en una hoja de seguimiento semanal.",
+   "citas": [
+    "casi siempre arranca la clase 20 minutos tarde",
+    "contesta los correos… al mes y medio, cuando ya pasó el parcial."
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "evaluacion",
+   "tipo": "mejorar",
+   "texto": "Rediseñar los parciales para que no excedan 90 min y establecer fechas de entrega de proyectos con al menos 48 h de antelación, publicando un calendario visible y verificando el cumplimiento mediante una tabla de control; mantener las rúbricas claras y los comentarios de notas como práctica ejemplar.",
+   "citas": [
+    "nos dejó el proyecto final un viernes a las 11 de la noche para el lunes",
+    "los parciales son larguísimos y no alcanza el tiempo"
+   ],
+   "fuente": "ia"
+  },
+  {
+   "aspecto": "dominio_tema",
+   "tipo": "reconocer",
+   "texto": "Los estudiantes destacan su amplio dominio de estadística; organizar una sesión de intercambio de buenas prácticas para compartir sus ejemplos y recursos con colegas, y difundirla mediante un video corto en la intranet.",
+   "citas": [
+    "Sabe muchísimo de estadística, eso no se discute, lo malo es que va rapidísimo y solo lee las diapositivas."
+   ],
+   "fuente": "ia"
+  }
  ]
 }

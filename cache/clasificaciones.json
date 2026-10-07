@@ -1646,5 +1646,130 @@
   "banderas": [],
   "razon": "rubrica entregada fuera de tiempo",
   "proveedor": "groq"
+ },
+ "c33286698de6abc90da515bd2916c976bf6e6816726e046e00bae412bda42a88": {
+  "aspectos": [
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "negativo",
+    "evidencia": "nos dejó el proyecto final un viernes a las 11 de la noche para el lunes"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [
+   "sarcasmo"
+  ],
+  "razon": "Sarcasmo evidente, critica la evaluación por plazo irrazonable",
+  "proveedor": "groq"
+ },
+ "6c617047b96ec499830d4cf6b681196620675a857e21a312e4813871e402b3fa": {
+  "aspectos": [
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "negativo",
+    "evidencia": "contesta los correos… al mes y medio"
+   }
+  ],
+  "confianza": 0.94,
+  "banderas": [
+   "sarcasmo"
+  ],
+  "razon": "Sarcasmo al decir 'Tan bacano' pero indica tardanza en respuestas",
+  "proveedor": "groq"
+ },
+ "63855377998c5522d819fdc1613b0448f3d35dc5269bf8a4ae35cac49875d7c0": {
+  "aspectos": [
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "positivo",
+    "evidencia": "Explica la regresión con ejemplos de fútbol y se entiende todo"
+   },
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "negativo",
+    "evidencia": "los parciales son larguísimos y no alcanza el tiempo"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [
+   "mixto"
+  ],
+  "razon": "Comentario positivo sobre metodología y negativo sobre parciales",
+  "proveedor": "groq"
+ },
+ "08e7d059312037620fc1773da0eb16dec7233b85286df3eb5c8a7fe9ab17b12f": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "positivo",
+    "evidencia": "Es súper paciente cuando uno pregunta"
+   },
+   {
+    "aspecto": "puntualidad",
+    "sentimiento": "negativo",
+    "evidencia": "casi siempre arranca la clase 20 minutos tarde"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [
+   "mixto"
+  ],
+  "razon": "Menciona paciencia (trato) y retraso constante (puntualidad)",
+  "proveedor": "groq"
+ },
+ "dba3177d2c7cf000a0e5faa3e70e85d8d9ebadea213803a974efce9ed758e4cb": {
+  "aspectos": [
+   {
+    "aspecto": "dominio_tema",
+    "sentimiento": "positivo",
+    "evidencia": "Sabe muchísimo de estadística"
+   },
+   {
+    "aspecto": "metodologia",
+    "sentimiento": "negativo",
+    "evidencia": "va rapidísimo y solo lee las diapositivas"
+   }
+  ],
+  "confianza": 0.96,
+  "banderas": [
+   "mixto"
+  ],
+  "razon": "Alaba conocimiento pero critica ritmo y falta de ejemplos",
+  "proveedor": "groq"
+ },
+ "10744e414531f3d65b1cec05f0fdf26f80292dd721e8d340c59083db2501fc06": {
+  "aspectos": [],
+  "confianza": 0.55,
+  "banderas": [
+   "ambiguo"
+  ],
+  "razon": "Comentario vago sin referencia clara a aspecto docente",
+  "proveedor": "groq"
+ },
+ "fcf3371423ac084596427059de8b56fce951f5ab4fb84c363f96718256956379": {
+  "aspectos": [
+   {
+    "aspecto": "evaluacion",
+    "sentimiento": "positivo",
+    "evidencia": "Las rúbricas de los talleres son clarísimas y siempre devuelve las notas con comentarios"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Elogia rúbricas claras y retroalimentación oportuna",
+  "proveedor": "groq"
+ },
+ "e38ed3e057a5278d0324b01f3736fd6506eec623133e12a63d45668f662b913f": {
+  "aspectos": [
+   {
+    "aspecto": "trato_estudiante",
+    "sentimiento": "negativo",
+    "evidencia": "Es grosero, se burla de los que no entienden y nos trata de vagos"
+   }
+  ],
+  "confianza": 0.95,
+  "banderas": [],
+  "razon": "Describe falta de respeto y burla hacia los estudiantes",
+  "proveedor": "groq"
  }
 }
