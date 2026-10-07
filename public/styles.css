@@ -124,3 +124,11 @@ select { font: inherit; font-size: 20px; padding: 8px 12px; border-radius: 8px; 
 .paso span { font-size: 16px; color: var(--suave); }
 .flecha { align-self: center; font-size: 30px; color: var(--azul); }
 code { background: var(--gris-claro); padding: 1px 6px; border-radius: 4px; }
+
+.sarcasmos { border: 2px solid #f6ad55; }
+.sarcasmo { padding: 14px 16px; margin-bottom: 12px; background: var(--ambar-claro); border-radius: 10px; }
+.sarcasmo .insignia { display: inline-block; background: #dd6b20; color: #fff; font-weight: 700; padding: 3px 12px; border-radius: 14px; font-size: 15px; text-transform: uppercase; letter-spacing: .5px; }
+.sarcasmo .literal { font-size: 20px; margin-top: 8px; }
+.sarcasmo .real { margin-top: 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.sarcasmo .real .chips { margin-top: 0; }
+.sarcasmo .meta { font-size: 15px; color: var(--suave); margin-top: 6px; }

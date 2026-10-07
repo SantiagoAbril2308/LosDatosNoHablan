@@ -142,6 +142,20 @@ function renderDocente(nombre) {
   $('#recsMejorar').innerHTML = recs.filter((r) => r.tipo === 'mejorar').map(li).join('') || '<li>Sin datos suficientes.</li>';
 
   const propios = datos.comentarios.filter((c) => c.docente === nombre);
+  const sarcasmos = propios.filter((c) => c.banderas.includes('sarcasmo'));
+  $('#nSarcasmos').textContent = sarcasmos.length || '';
+  $('#sarcasmos').innerHTML =
+    sarcasmos
+      .map(
+        (c) => `<div class="sarcasmo">
+        <span class="insignia">Sarcasmo detectado</span>${c.dudoso ? ' <span class="chip bandera">en revisión humana</span>' : ''}
+        <div class="literal"><b>Dice:</b> "${esc(c.comentario)}"</div>
+        <div class="real"><b>Se interpretó como:</b> <span class="chips">${chipsAspectos(c)}</span></div>
+        ${c.razon ? `<div class="meta">${esc(c.razon)} · confianza ${num(c.confianza, 2)}</div>` : ''}
+      </div>`
+      )
+      .join('') || '<p class="ayuda">No se detectó sarcasmo en los comentarios de este docente.</p>';
+
   const mixtos = propios.filter((c) => c.banderas.includes('mixto') && !c.dudoso);
   $('#mixtos').innerHTML = mixtos.map((c) => tarjetaComentario(c)).join('') || '<p class="ayuda">Este docente no tiene comentarios mixtos.</p>';
   $('#todos').innerHTML = propios.map((c) => tarjetaComentario(c, c.dudoso ? ' · <b>en revisión humana</b>' : '')).join('');
